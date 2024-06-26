@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Signature</title>
+  </head>
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+  <body>
+    <h1>Digital Signature</h1>
+    <form id="uploadForm">
+      <input type="file" id="fileInput" name="file" required />
+      <button type="submit">Upload and Sign</button>
+    </form>
+    <div class="signaturetitle">SIGNATURE</div>
+    <div id="signature"></div>
+    <button id="copyButton" data-clipboard-target="#signature">
+      Copy Signature
+    </button>
+
+    <h2>Verify Signature</h2>
+    <form id="verifyForm">
+      <input type="file" id="verifyFileInput" name="file" required />
+      <input
+        type="text"
+        id="signatureInput"
+        name="signature"
+        placeholder="Enter signature"
+        required
+      />
+      <button type="submit">Verify</button>
+    </form>
+    <p id="verificationResult"></p>
+
+    <script>
+      document
+        .getElementById("uploadForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fileInput = document.getElementById("fileInput");
+          const formData = new FormData();
+          formData.append("file", fileInput.files[0]);
+
+          //for copying the signature;
+          new ClipboardJS("#copyButton");
+          const response = await fetch("/upload", {
+            method: "POST",
+            body: formData,
+          });
+          const data = await response.json();
+          document.getElementById(
+            "signature"
+          ).textContent = `${data.signature}`;
+        });
+
+      document
+        .getElementById("verifyForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fileInput = document.getElementById("verifyFileInput");
+          const signatureInput = document.getElementById("signatureInput");
+          const formData = new FormData();
+          formData.append("file", fileInput.files[0]);
+          formData.append("signature", signatureInput.value);
+
+          const response = await fetch("/verify", {
+            method: "POST",
+            body: formData,
+          });
+          const data = await response.json();
+          document.getElementById(
+            "verificationResult"
+          ).textContent = `Verification Result: ${data.isVerified}`;
+        });
+    </script>
+  </body>
+</html>
