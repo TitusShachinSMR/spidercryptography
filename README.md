@@ -10,6 +10,8 @@ This task is commonly part of the Spider Club induction. It involves using separ
 2. Once the file is downloaded, extract it.
 3. Open VS Code and go to `File` > `Open Folder`.
 4. Choose the extracted folder.
+5. Make sure you already have node.js
+6. else download node from official side [node.js official site]url("https://nodejs.org/en")
 
 Once the folder is open in VS Code:
 
@@ -31,4 +33,6 @@ You will see a web page where you can upload a file and create a signature for i
 You should see the verification result as "true". If you choose a different file, the verification result will be "false".
 
 ---
+## demo video of the signature system:
+[digital signature link]url("https://drive.google.com/drive/folders/1zaHbNPx5SFETQgXo0748wnhJ2fVub_yq?usp=sharing");
 
