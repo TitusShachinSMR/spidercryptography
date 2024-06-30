@@ -12,7 +12,7 @@ This task is commonly part of the Spider Club induction. It involves using separ
 4. Choose the extracted folder.
 5. Make sure you already have node.js
 6. else download node from official side
- [node.js official site] (https://nodejs.org/en)
+ [node.js official site](https://nodejs.org/en)
 
 Once the folder is open in VS Code:
 
@@ -35,5 +35,5 @@ You should see the verification result as "true". If you choose a different file
 
 ---
 ## demo video of the signature system:
- [digital signature link] (https://drive.google.com/drive/folders/1zaHbNPx5SFETQgXo0748wnhJ2fVub_yq?usp=sharing)
+ [digital signature link](https://drive.google.com/drive/folders/1zaHbNPx5SFETQgXo0748wnhJ2fVub_yq?usp=sharing)
 
