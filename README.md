@@ -34,5 +34,5 @@ You should see the verification result as "true". If you choose a different file
 
 ---
 ## demo video of the signature system:
-[digital signature link] (https://drive.google.com/drive/folders/1zaHbNPx5SFETQgXo0748wnhJ2fVub_yq?usp=sharing);
+[digital signature link] (https://drive.google.com/drive/folders/1zaHbNPx5SFETQgXo0748wnhJ2fVub_yq?usp=sharing)
 
