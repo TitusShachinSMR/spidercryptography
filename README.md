@@ -33,6 +33,10 @@ You will see a web page where you can upload a file and create a signature for i
 
 You should see the verification result as "true". If you choose a different file, the verification result will be "false".
 
+else download the file digital-signature-system
+or clone the reporsitory
+install nodemodule, express, run the program by typing node app.js
+
 ---
 ## demo video of the signature system:
  [digital signature link](https://drive.google.com/drive/folders/1zaHbNPx5SFETQgXo0748wnhJ2fVub_yq?usp=sharing)
