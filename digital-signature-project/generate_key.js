@@ -16,4 +16,4 @@ const { publicKey, privateKey } = crypto.generateKeyPairSync("rsa", {
 fs.writeFileSync("private_key.pem", privateKey);
 fs.writeFileSync("public_key.pem", publicKey);
 
-console.log("Keys generated and saved to private_key.pem and public_key.pem");
+console.log("keys generated and saved in private_key.pem and public_key.pem");
