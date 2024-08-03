@@ -7,17 +7,17 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
-// Set up multer for file uploads
+// setting up multer for file uploads
 const upload = multer({ dest: "uploads/" });
 
-// Serve static files from the 'public' directory
+// serve static files from the 'public' directory
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// Route to handle file uploads and signature generation
+// route to handle file uploads and signature generation
 app.post("/upload", upload.single("file"), (req, res) => {
   const file = req.file;
   if (!file) {
@@ -32,7 +32,7 @@ app.post("/upload", upload.single("file"), (req, res) => {
 
   const signature = sign.sign(privateKey, "hex");
 
-  fs.unlinkSync(file.path); // Clean up uploaded file
+  fs.unlinkSync(file.path); // cleaning the file
 
   res.send({ signature });
 });
@@ -59,7 +59,7 @@ app.post("/verify", upload.single("file"), (req, res) => {
   res.send({ isVerified });
 });
 
-// Start the server
+// starting the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
